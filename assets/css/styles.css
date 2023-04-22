@@ -17,3 +17,7 @@ body {
 #imgUser {
   width: 80%;
 }
+
+.row {
+  padding: 5% 0%;
+}

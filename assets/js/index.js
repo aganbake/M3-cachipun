@@ -1,5 +1,9 @@
-let numUser;
-numPC;
+let numUser = 0,
+  numPC = 0,
+  puntosUser = 0,
+  puntosPC = 0,
+  initial = 0;
+let partidas = prompt("Ingrese el número de partidas");
 
 function game() {
   let randomN = Math.floor(Math.random() * 3) + 1;
@@ -26,26 +30,32 @@ function tijera() {
 
 function ganador() {
   if (numUser === 1 && numPC === 3) {
-    document.querySelector("h1").innerHTML = "Usuario Gana";
+    puntosUser++;
+  } else if (numUser === 2 && numPC === 1) {
+    puntosUser++;
+  } else if (numUser === 3 && numPC === 2) {
+    puntosUser++;
+  } else if (numUser === numPC) {
   } else {
-    document.querySelector("h1").innerHTML = "PC Gana";
+    puntosPC++;
   }
-
-  if (numUser === 2 && numPC === 1) {
-    document.querySelector("h1").innerHTML = "Usuario Gana";
-  } else {
-    document.querySelector("h1").innerHTML = "PC Gana";
-  }
-  if (numUser === 3 && numPC === 2) {
-    document.querySelector("h1").innerHTML = "Usuario Gana";
-  } else {
-    document.querySelector("h1").innerHTML = "PC Gana";
+  initial++;
+  if (initial == partidas) {
+    check();
   }
 }
 
-1 > 3;
-Piedra > tijera;
-3 > 2;
-Tijera > papel;
-2 > 1;
-Papel > Piedra;
+function check() {
+  for (let i = 0; i < partidas; i++) {
+    if (puntosUser > puntosPC) {
+      document.querySelector(
+        "h2"
+      ).innerHTML = `Usuario gana con ${puntosUser} puntos`;
+    } else if (puntosUser === puntosPC) {
+      document.querySelector("h2").innerHTML = "Empate";
+    } else {
+      document.querySelector("h2").innerHTML = `PC gana con ${puntosPC} puntos`;
+    }
+  }
+  document.querySelector("#button").disabled = true;
+}
