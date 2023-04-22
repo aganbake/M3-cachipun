@@ -57,5 +57,12 @@ function check() {
       document.querySelector("h2").innerHTML = `PC gana con ${puntosPC} puntos`;
     }
   }
-  document.querySelector("#button").disabled = true;
+  document.querySelector("#piedra").disabled = true;
+  document.querySelector("#tijera").disabled = true;
+  document.querySelector("#papel").disabled = true;
+  document.querySelector("#reiniciar").removeAttribute("hidden");
+}
+
+function reinicia() {
+  window.location.href = "index.html";
 }
