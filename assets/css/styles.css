@@ -1,0 +1,19 @@
+body {
+  background-color: #35bcbf;
+  text-align: center;
+  padding: 5% 0%;
+  color: white;
+}
+
+.container {
+  padding: 10%;
+}
+
+#imgPC {
+  transform: scaleX(-1);
+  width: 80%;
+}
+
+#imgUser {
+  width: 80%;
+}
