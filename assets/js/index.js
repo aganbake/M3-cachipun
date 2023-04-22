@@ -30,13 +30,23 @@ function tijera() {
 
 function ganador() {
   if (numUser === 1 && numPC === 3) {
+    document.querySelector("#winnerUser").innerHTML = "🚩";
+    document.querySelector("#winnerPC").innerHTML = " ";
     puntosUser++;
   } else if (numUser === 2 && numPC === 1) {
+    document.querySelector("#winnerUser").innerHTML = "🚩";
+    document.querySelector("#winnerPC").innerHTML = " ";
     puntosUser++;
   } else if (numUser === 3 && numPC === 2) {
+    document.querySelector("#winnerUser").innerHTML = "🚩";
+    document.querySelector("#winnerPC").innerHTML = " ";
     puntosUser++;
   } else if (numUser === numPC) {
+    document.querySelector("#winnerUser").innerHTML = " ";
+    document.querySelector("#winnerPC").innerHTML = " ";
   } else {
+    document.querySelector("#winnerUser").innerHTML = " ";
+    document.querySelector("#winnerPC").innerHTML = "🚩";
     puntosPC++;
   }
   initial++;
@@ -61,6 +71,8 @@ function check() {
   document.querySelector("#tijera").disabled = true;
   document.querySelector("#papel").disabled = true;
   document.querySelector("#reiniciar").removeAttribute("hidden");
+  document.querySelector("#winnerUser").innerHTML = "";
+  document.querySelector("#winnerPC").innerHTML = "";
 }
 
 function reinicia() {
