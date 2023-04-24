@@ -11,6 +11,7 @@ function game() {
     .querySelector("#imgPC")
     .setAttribute("src", "assets/images/" + randomN + ".png");
   numPC = randomN;
+  document.querySelector("#inicio").style.display = "none";
 }
 function piedra() {
   document.querySelector("#imgUser").setAttribute("src", "assets/images/1.png");
@@ -71,8 +72,6 @@ function check() {
   document.querySelector("#tijera").disabled = true;
   document.querySelector("#papel").disabled = true;
   document.querySelector("#reiniciar").removeAttribute("hidden");
-  document.querySelector("#winnerUser").innerHTML = "";
-  document.querySelector("#winnerPC").innerHTML = "";
 }
 
 function reinicia() {
